@@ -1,4 +1,4 @@
-# Sales Dashboards · Live Demo
+# Sales Dashboards 
 
 A public demo of internal sales and leadership dashboards, rebuilt with **randomised mock data**.
 No real people, customers, funds or figures appear anywhere. All data is generated in the browser from a
