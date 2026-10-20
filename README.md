@@ -25,5 +25,5 @@ assets/
 3. Push and open a pull request. CI type-checks and builds the site.
 4. Merge to `main`. The workflow publishes the portfolio and demo to GitHub Pages.
 
-The demo's base path is set at build time from the repository name (`/<repo>/demo`).
-If the site moves to a custom domain, change `NEXT_BASE_PATH` in `.github/workflows/pages.yml` to `/demo`.
+The demo's base path comes from the GitHub Pages settings at build time: `/dashboards/demo` on
+github.io, `/demo` once a custom domain is set. After changing the domain, re-run the workflow.
