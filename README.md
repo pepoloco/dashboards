@@ -1,29 +1,37 @@
-# Portfolio · Penyo Banchev
+# Sales Dashboards (demo)
 
-Personal portfolio site with a live sales-dashboards demo, hosted on GitHub Pages.
+Live: https://pepoloco.github.io/dashboards/
 
-- Portfolio: https://pepoloco.github.io/dashboards/
-- Dashboards demo: https://pepoloco.github.io/dashboards/demo/
+A public demo of internal sales and leadership dashboards, rebuilt with randomised mock data.
+No real people, customers, funds or figures appear anywhere. All data is generated in the browser from a
+seeded random generator, relative to today's date, so the demo never looks stale.
 
-## Repository layout
+## Pages
 
+| Route                | What it shows |
+|----------------------|---------------|
+| `/overview`          | Executive overview: signed volume vs last year and target pace, win rate, weighted pipeline, regional growth, top consultants |
+| `/user-activation`   | User activation KPIs, growth over time, activation funnel, onboarding rate, weekly sign-ups & KYC completions, registration device |
+| `/deals`             | Deals Closed · Brand Denmark (filterable), All Deals Closed Won, All Deals Closed Lost, Pipeline Report · Sales |
+| `/pipeline-insights` | Win rate, ticket size and days to close per channel, won value by fund, weighted forecast, open pipeline ageing |
+| `/sales-report`      | Sales Report by Consultant: monthly signed volume vs. target per region, plus meetings booked/attended |
+| `/scorecard`         | Consultant scorecard per region: target attainment, year-end pace, show rate, signed per meeting |
+
+## Develop
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run typecheck
+npm run build      # static export to out/
+npm start          # serve out/ locally
 ```
-apps/
-  portfolio/          Static portfolio page (index.html + media/), served at the site root
-  dashboards-demo/    Next.js app, exported as static files and served at /demo/
-assets/
-  originals/          Source images before resizing (not deployed)
-.github/workflows/
-  pages.yml           CI: type-check + build on every push and PR; deploys main to GitHub Pages
-```
+
+Don't run `npm run build` while `npm run dev` is running; both write to `.next/`.
 
 ## Workflow
 
-1. Branch off `main` for a change.
-2. Run the demo locally (`cd apps/dashboards-demo && npm install && npm run dev`) or open
-   `apps/portfolio/index.html` in a browser.
-3. Push and open a pull request. CI type-checks and builds the site.
-4. Merge to `main`. The workflow publishes the portfolio and demo to GitHub Pages.
+1. Branch off `main` for a change and open a pull request. CI type-checks and builds it.
+2. Merge to `main`. `.github/workflows/pages.yml` publishes the static export to GitHub Pages.
 
-The demo's base path comes from the GitHub Pages settings at build time: `/dashboards/demo` on
-github.io, `/demo` once a custom domain is set. After changing the domain, re-run the workflow.
+The base path comes from the Pages settings at build time (`/dashboards` on github.io, none on a custom domain).
