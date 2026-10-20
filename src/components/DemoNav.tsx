@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const PORTFOLIO_URL = "https://pepoloco.github.io/Portfolio-Project/"
+const PORTFOLIO_URL = "https://pepobanchev.com/"
 
 const TABS = [
   { href: "/overview",          label: "Executive Overview" },
