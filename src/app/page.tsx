@@ -45,13 +45,7 @@ export default function Home() {
     <div className="page-bg">
       <DemoNav />
       <main className="wrap">
-        <div className="page-eyebrow">Live demo</div>
-        <h1 className="page-title">Sales &amp; leadership dashboards</h1>
-        <p className="page-sub" style={{ maxWidth: 640 }}>
-          Rebuilt from internal dashboards that run on CRM data, shipped with Next.js and Vercel.
-          Every number, name and fund on these pages is randomised mock data.
-        </p>
-        <div className="hub-grid">
+        <div className="hub-grid" style={{ marginTop: 0 }}>
           {CARDS.map(c => (
             <Link key={c.href} href={c.href} className="hub-card" style={{ borderTopColor: c.color }}>
               <h2>{c.title}</h2>

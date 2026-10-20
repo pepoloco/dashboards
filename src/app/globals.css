@@ -38,6 +38,11 @@ a { color: inherit; }
   position: sticky; top: 0; z-index: 100;
 }
 .brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: -.01em; }
+.back-btn {
+  font-size: 12px; font-weight: 600; color: #fff; text-decoration: none; white-space: nowrap;
+  padding: 7px 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 6px;
+}
+.back-btn:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.45); }
 .live { display: flex; align-items: center; gap: 7px; font-size: 11px; color: rgba(255,255,255,.5); }
 .live-dot {
   width: 6px; height: 6px; border-radius: 50%;
