@@ -1,10 +1,4 @@
-# Sales Dashboards (demo)
-
 Live: https://pepoloco.github.io/dashboards/
-
-A public demo of internal sales and leadership dashboards, rebuilt with randomised mock data.
-No real people, customers, funds or figures appear anywhere. All data is generated in the browser from a
-seeded random generator, relative to today's date, so the demo never looks stale.
 
 ## Pages
 
@@ -16,22 +10,3 @@ seeded random generator, relative to today's date, so the demo never looks stale
 | `/pipeline-insights` | Win rate, ticket size and days to close per channel, won value by fund, weighted forecast, open pipeline ageing |
 | `/sales-report`      | Sales Report by Consultant: monthly signed volume vs. target per region, plus meetings booked/attended |
 | `/scorecard`         | Consultant scorecard per region: target attainment, year-end pace, show rate, signed per meeting |
-
-## Develop
-
-```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run typecheck
-npm run build      # static export to out/
-npm start          # serve out/ locally
-```
-
-Don't run `npm run build` while `npm run dev` is running; both write to `.next/`.
-
-## Workflow
-
-1. Branch off `main` for a change and open a pull request. CI type-checks and builds it.
-2. Merge to `main`. `.github/workflows/pages.yml` publishes the static export to GitHub Pages.
-
-The base path comes from the Pages settings at build time (`/dashboards` on github.io, none on a custom domain).
