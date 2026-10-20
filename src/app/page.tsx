@@ -56,7 +56,7 @@ export default function Home() {
             <Link key={c.href} href={c.href} className="hub-card" style={{ borderTopColor: c.color }}>
               <h2>{c.title}</h2>
               <p>{c.text}</p>
-              <span className="go" style={{ color: c.color }}>Open dashboard →</span>
+              <span className="go" style={{ color: c.color }}>Open dashboard</span>
             </Link>
           ))}
         </div>
