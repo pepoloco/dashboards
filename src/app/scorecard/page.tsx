@@ -154,7 +154,7 @@ export default function ScorecardPage() {
               <table className="dt">
                 <thead style={{ background: "var(--bei)" }}>
                   <tr>
-                    <th>#</th><th>Consultant</th>
+                    <th>#</th><th className="stick" style={{ background: "var(--bei)" }}>Consultant</th>
                     {COLUMNS.map(c => (
                       <th key={c.key} className="r th-sort" title={c.title}
                         onClick={() => setSort(s => ({ key: c.key, desc: s.key === c.key ? !s.desc : true }))}
@@ -168,7 +168,7 @@ export default function ScorecardPage() {
                   {sorted.map((r, i) => (
                     <tr key={r.name}>
                       <td><span className="rank">{i + 1}</span></td>
-                      <td style={{ whiteSpace: "nowrap" }}>
+                      <td className="stick" style={{ whiteSpace: "nowrap", background: "#fff" }}>
                         <div style={{ fontWeight: 600, color: "var(--ink1)" }}>{r.name}</div>
                         <div style={{ fontSize: 10, color: "var(--ink3)" }}>since {new Date(r.start).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</div>
                       </td>

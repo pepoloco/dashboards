@@ -88,7 +88,7 @@ function ConsultantHeader({ consultants, years, current, startDates }: {
 }) {
   return (<>
     <tr>
-      <th rowSpan={2} style={{ padding: "12px 16px", textAlign: "left", fontSize: 10, fontWeight: 600, letterSpacing: ".07em", textTransform: "uppercase", color: "var(--ink3)", borderBottom: bdr2, borderRight: bdr2, verticalAlign: "bottom", whiteSpace: "nowrap", background: "var(--bg)" }}>Month</th>
+      <th rowSpan={2} className="stick" style={{ padding: "12px 16px", textAlign: "left", fontSize: 10, fontWeight: 600, letterSpacing: ".07em", textTransform: "uppercase", color: "var(--ink3)", borderBottom: bdr2, borderRight: bdr2, verticalAlign: "bottom", whiteSpace: "nowrap", background: "var(--bg)" }}>Month</th>
       {consultants.map((c, ci) => (
         <th key={c} colSpan={years.length} style={{ padding: "10px 12px", textAlign: "center", fontSize: 11, fontWeight: 700, background: clr(ci).bg, color: clr(ci).text, borderRight: bdr2, whiteSpace: "nowrap", textTransform: "uppercase", letterSpacing: ".04em" }}>
           {c}
@@ -128,7 +128,7 @@ function SalesTable({ report, current }: { report: ReportData; current: number }
     startDates[c] && new Date(startDates[c]).getFullYear() > y ? 0 : targets[c] ?? 0
 
   const sideTh = (label: string, last = false) => (
-    <th style={{ padding: "5px 16px", textAlign: "left", fontSize: 9, fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--ink3)", borderBottom: last ? bdr2 : bdr, borderRight: bdr2, whiteSpace: "nowrap", background: "var(--bg)" }}>{label}</th>
+    <th className="stick" style={{ padding: "5px 16px", textAlign: "left", fontSize: 9, fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--ink3)", borderBottom: last ? bdr2 : bdr, borderRight: bdr2, whiteSpace: "nowrap", background: "var(--bg)" }}>{label}</th>
   )
 
   return (
@@ -166,7 +166,7 @@ function SalesTable({ report, current }: { report: ReportData; current: number }
           <tbody>
             {MONTHS.map((month, mi) => (
               <tr key={month} style={{ background: mi % 2 === 0 ? "var(--card)" : "var(--bg)" }}>
-                <td style={{ padding: "9px 16px", fontWeight: 600, fontSize: 12, color: "var(--ink2)", borderRight: bdr2, borderBottom: bdr, whiteSpace: "nowrap" }}>{month}</td>
+                <td className="stick" style={{ padding: "9px 16px", fontWeight: 600, fontSize: 12, color: "var(--ink2)", borderRight: bdr2, borderBottom: bdr, whiteSpace: "nowrap", background: mi % 2 === 0 ? "var(--card)" : "var(--bg)" }}>{month}</td>
                 {consultants.map((c, ci) => years.map((y, yi) => {
                   const cell = data[c]?.[y]?.[mi + 1]
                   const clickable = !!cell && cell.amount > 0
@@ -186,7 +186,7 @@ function SalesTable({ report, current }: { report: ReportData; current: number }
           </tbody>
           <tfoot>
             <tr style={{ borderTop: bdr2 }}>
-              <td style={{ padding: "10px 16px", fontWeight: 700, fontSize: 10, color: "var(--ink1)", letterSpacing: ".06em", textTransform: "uppercase", borderRight: bdr2 }}>Total</td>
+              <td className="stick" style={{ padding: "10px 16px", fontWeight: 700, fontSize: 10, color: "var(--ink1)", letterSpacing: ".06em", textTransform: "uppercase", borderRight: bdr2, background: "var(--card)" }}>Total</td>
               {consultants.map((c, ci) => years.map((y, yi) => {
                 const total = totals[c][y]
                 return (
@@ -219,7 +219,7 @@ function MeetingsCountTable({ report, title, current }: {
           <tbody>
             {MONTHS.map((month, mi) => (
               <tr key={month} style={{ background: mi % 2 === 0 ? "var(--card)" : "var(--bg)" }}>
-                <td style={{ padding: "9px 16px", fontWeight: 600, fontSize: 12, color: "var(--ink2)", borderRight: bdr2, borderBottom: bdr, whiteSpace: "nowrap" }}>{month}</td>
+                <td className="stick" style={{ padding: "9px 16px", fontWeight: 600, fontSize: 12, color: "var(--ink2)", borderRight: bdr2, borderBottom: bdr, whiteSpace: "nowrap", background: mi % 2 === 0 ? "var(--card)" : "var(--bg)" }}>{month}</td>
                 {consultants.map((c, ci) => years.map((y, yi) => {
                   const n = count(c, y, mi + 1)
                   return (
@@ -233,7 +233,7 @@ function MeetingsCountTable({ report, title, current }: {
           </tbody>
           <tfoot>
             <tr style={{ borderTop: bdr2 }}>
-              <td style={{ padding: "10px 16px", fontWeight: 700, fontSize: 10, color: "var(--ink1)", letterSpacing: ".06em", textTransform: "uppercase", borderRight: bdr2 }}>Total</td>
+              <td className="stick" style={{ padding: "10px 16px", fontWeight: 700, fontSize: 10, color: "var(--ink1)", letterSpacing: ".06em", textTransform: "uppercase", borderRight: bdr2, background: "var(--card)" }}>Total</td>
               {consultants.map((c, ci) => years.map((y, yi) => {
                 const t = total(c, y)
                 return (
