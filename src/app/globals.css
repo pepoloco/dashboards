@@ -64,6 +64,11 @@ a { color: inherit; }
 .tab:hover { color: rgba(255,255,255,.75); }
 .tab.active { color: #fff; border-bottom-color: var(--pur); }
 
+.mock-note {
+  background: #fdf3d7; color: #7a5b0c; border-bottom: 1px solid #f0dfa8;
+  font-size: 11px; font-weight: 500; text-align: center; padding: 6px 16px; line-height: 1.4;
+}
+
 /* MAIN */
 .wrap { max-width: 1280px; margin: 0 auto; padding: 28px 24px 72px; }
 .wrap.wide { max-width: 1680px; }

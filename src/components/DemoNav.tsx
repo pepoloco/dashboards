@@ -25,6 +25,7 @@ export default function DemoNav({ active }: { active?: string }) {
           </Link>
         ))}
       </div>
+      <div className="mock-note">Mock data · all names, numbers and funds on these dashboards are made up for demo purposes</div>
     </>
   )
 }
